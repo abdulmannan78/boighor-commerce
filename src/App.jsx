@@ -197,6 +197,7 @@ function App() {
         {activeTab === "store" && (
           <Storefront
             books={filteredBooks}
+            allBooks={books}
             allCount={books.length}
             category={category}
             setCategory={setCategory}
@@ -268,7 +269,13 @@ function Sidebar({ activeTab, showTab }) {
   );
 }
 
-function Storefront({ books, allCount, category, setCategory, sort, setSort, addToCart, showTab }) {
+function Storefront({ books, allBooks, allCount, category, setCategory, sort, setSort, addToCart, showTab }) {
+  const categorySections = categories.map((item) => ({
+    name: item,
+    books: allBooks.filter((book) => book.category === item).slice(0, 5),
+    count: allBooks.filter((book) => book.category === item).length,
+  })).filter((section) => section.count > 0);
+
   return (
     <section>
       <div className="hero">
@@ -284,7 +291,22 @@ function Storefront({ books, allCount, category, setCategory, sort, setSort, add
         </div>
       </div>
       <div className="content">
-        <SectionHead title="Book Catalog" text="Seeded with Bangladesh bookshop categories and 100 starter products.">
+        <SectionHead title="Book Categories" text="Browse the collection by subject, including a new IT Security learning shelf." />
+        <div className="category-section-grid">
+          {categorySections.map((section) => (
+            <button className="category-section" key={section.name} onClick={() => setCategory(section.name)}>
+              <span className="category-section-head">
+                <strong>{section.name}</strong>
+                <em>{section.count} books</em>
+              </span>
+              <span className="category-covers">
+                {section.books.slice(0, 4).map((book) => <img key={book.id} src={book.cover} alt={`${book.title} cover`} loading="lazy" />)}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <SectionHead title="Book Catalog" text="Seeded with Bangladesh bookshop categories and 110 starter products.">
           <select value={category} onChange={(event) => setCategory(event.target.value)}>
             {["All categories", ...categories].map((item) => <option key={item}>{item}</option>)}
           </select>

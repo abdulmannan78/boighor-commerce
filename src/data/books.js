@@ -13,6 +13,7 @@ export const categories = [
   "Biography",
   "History",
   "Exam Prep",
+  "IT Security",
 ];
 
 const authors = [
@@ -46,14 +47,28 @@ const titles = [
   "Short Stories 2026", "Translated World Classics", "Philosophy for Life", "Law and Justice", "Medical Admission Guide", "Engineering Math", "Olympiad Problem Book", "Nature and Outdoors", "Sports Quiz", "Media and Journalism",
 ];
 
-export const createBooks = () => titles.map((title, index) => {
+const securityBooks = [
+  { title: "Cyber Security Fundamentals", author: "Nadia Rahman" },
+  { title: "Ethical Hacking Starter Guide", author: "Tanvir Hasan" },
+  { title: "Network Security Practical Lab", author: "Mahmudul Karim" },
+  { title: "Linux Server Hardening", author: "Sabrina Islam" },
+  { title: "Web Application Security", author: "Farhan Ahmed" },
+  { title: "SOC Analyst Field Notes", author: "Afsana Chowdhury" },
+  { title: "Cloud Security Essentials", author: "Rafiq Alam" },
+  { title: "Digital Forensics Basics", author: "Muntasir Kabir" },
+  { title: "Malware Analysis Beginner", author: "Rumana Akter" },
+  { title: "Incident Response Playbook", author: "Sajjad Hossain" },
+];
+
+export const createBooks = () => [...titles, ...securityBooks.map((book) => book.title)].map((title, index) => {
   const price = 90 + ((index * 37) % 720);
+  const securityBook = index >= titles.length ? securityBooks[index - titles.length] : null;
 
   return {
     id: `BK-${String(index + 1).padStart(3, "0")}`,
     title,
-    author: authors[index % authors.length],
-    category: categories[index % categories.length],
+    author: securityBook?.author || authors[index % authors.length],
+    category: securityBook ? "IT Security" : categories[index % (categories.length - 1)],
     isbn: `978-984-${String(100000 + index * 791).slice(0, 6)}`,
     price,
     oldPrice: Math.round(price * (1.18 + (index % 4) * 0.08)),

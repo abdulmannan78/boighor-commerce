@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="700" viewBox="0 0 480 700" role="img" aria-labelledby="title desc">
+  <title id="title">Incident Response Playbook cover</title>
+  <desc id="desc">Local generated IT security book cover for Incident Response Playbook by Sajjad Hossain</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#8a4b2a"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0v36" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="700" fill="url(#bg)"/>
+  <rect width="480" height="700" fill="url(#grid)"/>
+  <rect x="30" y="30" width="420" height="640" rx="18" fill="none" stroke="rgba(255,255,255,.62)" stroke-width="4"/>
+  <rect x="54" y="54" width="128" height="34" rx="17" fill="#facc15"/>
+  <text x="118" y="77" text-anchor="middle" font-size="16" font-weight="900" fill="#0f172a">IT Security</text>
+  <path d="M342 86 l42 -22 42 22 v58 c0 38 -25 70 -42 80 -17 -10 -42 -42 -42 -80z" fill="#facc15" opacity=".95"/>
+  <text x="384" y="143" text-anchor="middle" font-size="28" font-weight="900" fill="#0f172a">#110</text>
+  <text x="36" y="170" font-size="27" font-weight="800" fill="#ffffff">Incident Response</text><text x="36" y="202" font-size="27" font-weight="800" fill="#ffffff">Playbook</text>
+  <path d="M68 505 H168 M168 505 V455 H258 V535 H348 V485 H420" fill="none" stroke="#facc15" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="168" cy="455" r="10" fill="#ffffff"/><circle cx="258" cy="535" r="10" fill="#ffffff"/><circle cx="348" cy="485" r="10" fill="#ffffff"/>
+  <text x="36" y="602" font-size="19" font-weight="700" fill="rgba(255,255,255,.9)">Sajjad Hossain</text>
+  <text x="36" y="635" font-size="15" fill="rgba(255,255,255,.74)">ISBN 978-984-186219</text>
+</svg>
