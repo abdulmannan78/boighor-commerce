@@ -1,0 +1,9 @@
+services:
+  boighor-commerce:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: boighor-commerce:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
