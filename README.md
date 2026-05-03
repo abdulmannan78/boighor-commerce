@@ -47,6 +47,14 @@ After this project is pushed to GitHub, the workflow in `.github/workflows/docke
 ghcr.io/<your-github-username-or-org>/boighor-commerce:latest
 ```
 
+## AlmaLinux Deployment
+
+For the Docker server at `172.16.0.170`, see:
+
+```text
+DEPLOY_ALMALINUX.md
+```
+
 ## Notes
 
 The payment gateways are frontend simulations. Real bKash, Nagad, Visa, and Mastercard integration requires backend API routes, merchant credentials, webhook verification, and secure server-side order validation.
